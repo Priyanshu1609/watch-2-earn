@@ -1,6 +1,6 @@
 {
-	"name": "ethereum-boilerplate",
-	"homepage": "http://ethereum-boilerplate.github.io/ethereum-boilerplate",
+	"name": "Watch2Earn",
+	"homepage": "",
 	"version": "0.1.0",
 	"dependencies": {
 		"@walletconnect/web3-provider": "^1.6.6",
@@ -12,7 +12,7 @@
 		"react-moralis": "^1.2.1",
 		"react-router": "^5.2.1",
 		"react-router-dom": "^5.3.0",
-		"react-scripts": "4.0.3",
+		"react-scripts": "^5.0.0",
 		"sharp": "^0.29.3",
 		"web-vitals": "^1.0.1"
 	},
