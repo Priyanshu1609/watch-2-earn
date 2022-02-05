@@ -4,6 +4,7 @@ import Head from "next/head";
 
 import "styles/index.css";
 import "styles/global.css";
+import Navbar from "components/Navbar";
 
 /** Get your free Moralis Account https://moralis.io/ */
 
@@ -19,6 +20,7 @@ const Application = ({ Component, pageProps }) => {
         <title>Watch2Earn</title>
       </Head>
       <MoralisProvider appId={APP_ID} serverUrl={SERVER_URL}>
+        <Navbar />
         <Component {...pageProps} isServerInfo={isServerInfo} />
       </MoralisProvider>
     </>
