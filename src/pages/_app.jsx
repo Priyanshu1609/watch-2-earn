@@ -1,9 +1,11 @@
 import React from "react";
 import { MoralisProvider } from "react-moralis";
 import Head from "next/head";
+// import BiconomyContextProvider from "context/BiconomyProvider";
 
 import "styles/index.css";
 import "styles/global.css";
+import BiconomyContextProvider from "context/BiconomyProvider";
 
 /** Get your free Moralis Account https://moralis.io/ */
 
@@ -19,7 +21,9 @@ const Application = ({ Component, pageProps }) => {
         <title>Watch2Earn</title>
       </Head>
       <MoralisProvider appId={APP_ID} serverUrl={SERVER_URL}>
-        <Component {...pageProps} isServerInfo={isServerInfo} />
+        <BiconomyContextProvider>
+          <Component {...pageProps} isServerInfo={isServerInfo} />
+        </BiconomyContextProvider>
       </MoralisProvider>
     </>
   );
