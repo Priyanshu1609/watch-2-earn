@@ -37,9 +37,9 @@ function Account() {
   if (!isAuthenticated || !account) {
     return (
       <>
-        <div className="m-5" id="button">
+        <div id="button">
           <button
-            className="mx-auto transition duration-150 ease-in-out hover:bg-indigo-500 bg-indigo-700 rounded text-white px-4 sm:px-8 py-2 text-xs sm:text-sm"
+            className="mx-auto transition duration-150 ease-in-out bg-[#00B48Cff] rounded text-white px-4 sm:px-8 py-2 text-xs sm:text-sm"
             onClick={metaMaskAuthentication}
           >
             <p className="color-white">Authenticate</p>
@@ -50,12 +50,12 @@ function Account() {
   }
 
   return (
-    <>
-      <div>
-        <p>{getEllipsisTxt(account, 6)}</p>
-        <Blockies seed={account.toLowerCase()} size={8} scale={4} />
+    <div className="flex-row m-1 justify-center flex-1 flex">
+      <div className="w-auto text-center p-2 text-white">
+        {getEllipsisTxt(account, 6)}
       </div>
-    </>
+      <Blockies seed={account.toLowerCase()} size={8} scale={4} />
+    </div>
   );
 }
 
