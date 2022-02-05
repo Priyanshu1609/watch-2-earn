@@ -4,7 +4,7 @@ const Card = () => {
 
 
     return (
-        <div className=" w-64 xl:mb-0 mx-8 text-white rounded-lg overflow-hidden shadow-lg">
+        <div className=" w-64 xl:mb-0 mx-8 text-white rounded-lg overflow-hidden shadow-lg my-6">
             <div>
                 <div className="bg-dark w-full h-44" />
             </div>

@@ -8,11 +8,8 @@ import Video from "./video";
 
 function Index() {
   return (
-    <>
-      <Navbar />
-      <Product />
-      {/* <Video /> */}
-    </>
+    <div>
+    </div>
   );
 }
 

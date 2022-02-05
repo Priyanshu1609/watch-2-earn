@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 const ProductNav = () => {
     const [nav, setNav] = useState(true);
+    const router = useRouter();
 
     const changeNav = () => {
         if (window.scrollY > 5) {
@@ -17,13 +19,13 @@ const ProductNav = () => {
 
 
     return (
-        <div className={`flex justify-between mt-16 mx-16 text-white  ${nav ? 'mb-52' : 'mb-14'}`}>
+        <div className={`flex justify-between mt-8 mx-16 text-white  ${nav ? 'mb-36' : 'mb-14'}`}>
             <div className={` flex ${nav ? 'flex-col w-1/3' : 'w-full'}`}>
-                <div className={`text-7xl mt-2 flex ${nav ? 'flex-col' : ''}`}>
+                <div className={`text-4xl md:text-6xl lg:text-7xl mt-2 flex ${nav ? 'flex-col' : ''}`}>
                     <p>Nike Air</p>
                     <p className={`${!nav ? 'pl-4' : ''}`}>Jordan</p>
                 </div>
-                <div className={`mt-6 space-x-3 text-sm flex ${nav ? '' : 'ml-8'}`}>
+                <div className={`mt-6 space-x-3 hover:cursor-pointer text-sm flex ${nav ? '' : 'ml-8'}`} onClick={() => router.push('/video')}>
                     <div className="py-2 px-4 bg-green-500 text-gray-100 rounded-md shadow-lg w-40 h-10 flex space-x-2">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
