@@ -1,11 +1,17 @@
+import React from "react";
+
+
 import Account from "components/Account/Account";
 import Navbar from "components/Navbar";
-import React from "react";
+import Product from "./product";
+import Video from "./video";
 
 function Index() {
   return (
     <>
       <Navbar />
+      <Product />
+      {/* <Video /> */}
     </>
   );
 }
