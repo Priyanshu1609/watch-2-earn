@@ -3,12 +3,13 @@ import { useRouter } from "next/router";
 
 import Account from "./Account/Account";
 import Logo from "./Logo";
+import Link from 'next/link'
 
 const Navbar = () => {
   const router = useRouter();
   return (
     <>
-      <nav className="bg-white border-gray-200 px-2 sm:px-4  dark:bg-black">
+      <nav className="bg-black border-gray-200 px-2 sm:px-4  dark:bg-black">
         <div className="container flex flex-wrap justify-between items-center mx-auto">
           <a href="#" className="flex" onClick={()=> router.push('/')}>
             <Logo width={134} height={36} />
@@ -74,6 +75,15 @@ const Navbar = () => {
               >
                 Dashboard
               </a>
+            </div>
+            <div className=" flex justify-center p-2 align-middle flex-col">
+              <Link href="/admin">
+              <a
+                className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+              >
+                Business
+              </a>
+              </Link>
             </div>
             <div className=" flex justify-center p-2 align-middle flex-col">
               <Account />
