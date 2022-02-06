@@ -1,8 +1,36 @@
-import React from 'react';
+import React , {useEffect} from 'react';
 import { useRouter } from 'next/router';
+import watch2EarnFactoryContract from "contracts/Watch2EarnFactory.json";
+import { useMoralis } from "react-moralis";
 
 const Modal = () => {
     const router = useRouter();
+    const {  abi } = watch2EarnFactoryContract;
+    const { isWeb3Enabled, Moralis, account, chainId, isAuthenticated, isWeb3EnableLoading, user } = useMoralis();
+
+      const createTransaction = async () => {
+        if (isAuthenticated && isWeb3Enabled) {
+            const currentUser = user.attributes.ethAddress;
+            console.log(currentUser);
+            const transaction = await Moralis.executeFunction({
+                contractAddress: "0xfA23cAE49d03dBc8Dc700Afb7598018F7871E53E",
+                functionName: "mint",
+                abi: abi,
+                params: {
+                    contractAddress:"0xF0859E4eaBAA5a587F38f2536A635ff618c0046e",
+                    account: currentUser,
+                    id: 1,
+                    amount: 1,
+                    data: [],
+                    _tokenURI: "QmV9iYeXh6sRukUnP3Ev952JfYgDAjSMqsuErk2VNyGAw8"
+                },
+            });
+            const receipt = await transaction.wait(1);
+            console.log(receipt);
+        }else{
+            console.log("Not Authenticated");
+        }
+      }
 
     return (
         <div className="min-w-screen h-screen animated fadeIn faster  fixed  left-0 top-0 flex justify-center items-center inset-0 z-50 outline-none focus:outline-none bg-no-repeat bg-center bg-cover bg-dark backdrop-filter backdrop-blur-md bg-opacity-20" >
@@ -23,7 +51,7 @@ const Modal = () => {
                         <button onClick={() => router.push('/')} className="mb-2 md:mb-0 bg-white px-5 py-2 text-sm shadow-sm font-medium tracking-wider border text-gray-600 rounded-full hover:shadow-lg hover:bg-gray-100">
                             Cancel
                         </button>
-                        <button className="mb-2 md:mb-0 bg-green-500 border border-green-500 px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-full hover:shadow-lg hover:opacity-80">Accept</button>
+                        <button onClick={createTransaction} className="mb-2 md:mb-0 bg-green-500 border border-green-500 px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-full hover:shadow-lg hover:opacity-80">Accept</button>
                     </div>
                 </div>
             </div>
