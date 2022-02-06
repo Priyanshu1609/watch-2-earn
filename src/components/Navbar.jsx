@@ -54,6 +54,7 @@ const Navbar = () => {
             <div className=" flex justify-center p-2 align-middle flex-col">
               <a
                 href="#"
+                onClick = {()=> router.push('/')}
                 className="block py-2 pr-4 pl-3 text-white rounded md:bg-transparent md:p-0 dark:text-white bg:red"
                 aria-current="page"
               >
