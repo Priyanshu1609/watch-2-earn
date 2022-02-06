@@ -1,3 +1,64 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+.slide img {
+  width: 20rem;
+  margin: 10px;
+  border-radius: 100px;
+
+}
+.activeSlide img {
+  width: 30rem;
+  margin: 100px;
+  border-radius: 100px;
+
+}
+
+.slide {
+  transform: scale(0.4);
+  transition: transform 300ms;
+  opacity: 0.5;
+}
+
+.activeSlide {
+  transform: scale(1.5);
+  opacity: 1;
+  
+}
+
+.arrow {
+  background-color: #fff;
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.arrow svg {
+  transition: color 300ms;
+}
+
+.arrow svg:hover {
+  color: #35f074;
+}
+
+.next {
+  right: 7%;
+  top: 45%;
+  padding: 3px;
+  border-radius: 15px;
+  background-color: #383b3f;
+  color: white;
+}
+
+.prev {
+  left: 7%;
+  top: 45%;
+  padding: 3px;
+  border-radius: 15px;
+  background-color: #383b3f;
+  color: white;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
