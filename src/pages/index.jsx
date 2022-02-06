@@ -3,6 +3,7 @@ import { useState } from "react";
 import Slider from "react-slick";
 
 import Account from "components/Account/Account";
+import ClaimReward from "components/ClaimReward";
 import Navbar from "components/Navbar";
 import Product from "./product";
 import Video from "./video";
