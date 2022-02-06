@@ -12,6 +12,7 @@ function Account() {
     account,
     enableWeb3,
     logout,
+    Moralis,
   } = useMoralis();
 
   const metaMaskAuthentication = async () => {
@@ -27,8 +28,15 @@ function Account() {
   };
   useEffect(() => {
     const connectorId = window.localStorage.getItem("connectorId");
+
+    const doWeb3Enable = async () => {
+      const connectorId = window.localStorage.getItem("connectorId");
+      const walletWeb3 = await Moralis.enableWeb3();
+    };
+
     if (isAuthenticated && !isWeb3Enabled && !isWeb3EnableLoading) {
-      enableWeb3({ provider: connectorId });
+      // enableWeb3({ provider: connectorId });
+      // doWeb3Enable();
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps

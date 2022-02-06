@@ -3,6 +3,9 @@
 	"homepage": "",
 	"version": "0.1.0",
 	"dependencies": {
+		"@biconomy/mexa": "^2.0.26",
+		"@opengsn/contracts": "^2.2.5",
+		"@openzeppelin/contracts": "^4.4.2",
 		"3d-react-carousal": "^4.0.2",
 		"@walletconnect/web3-provider": "^1.6.6",
 		"magic-sdk": "^8.0.1",
@@ -25,6 +28,7 @@
 	"devDependencies": {
 		"@next/eslint-plugin-next": "^12.0.4",
 		"@nomiclabs/hardhat-ethers": "^2.0.0",
+		"@nomiclabs/hardhat-etherscan": "^3.0.0",
 		"@nomiclabs/hardhat-waffle": "^2.0.0",
 		"@testing-library/jest-dom": "^5.11.4",
 		"@testing-library/react": "^11.1.0",
@@ -53,7 +57,8 @@
 		"test": "next test",
 		"connect": "moralis-admin-cli connect-local-devchain",
 		"watch:events": "moralis-admin-cli add-contract",
-		"deploy:page": "cross-env-shell \"yarn build && touch out/.nojekyll && gh-pages -d out -t true\""
+		"deploy:page": "cross-env-shell \"yarn build && touch out/.nojekyll && gh-pages -d out -t true\"",
+		"deploy:contract": "npx hardhat run scripts/deploy.js"
 	},
 	"browserslist": {
 		"production": [
