@@ -7,23 +7,28 @@ const useMetaTransaction = ({ input, transactionParams }) => {
     useState(false);
   const [error, setError] = useState();
 
-  const onSubmitMetaTransaction = ({ onConfirmation, onError }) => {
+  const onSubmitMetaTransaction = async ({ onConfirmation, onError }) => {
     try {
       setIsMetatransactionProcessing(true);
-      let tx = contract.methods.setStorage(input).send(transactionParams);
+      // let tx = await contract.pause(input).send(transactionParams);
+      console.log(contract);
+      let tx = await contract.unpause(input);
+      console.log("tx", tx);
 
-      tx.on("transactionHash", function () {})
-        .once("confirmation", function (transactionHash) {
-          setIsMetatransactionProcessing(false);
-          onConfirmation(transactionHash);
-        })
-        .on("error", function (e) {
-          setError(e);
-          setIsMetatransactionProcessing(false);
-          onError();
-        });
+      // tx.on("transactionHash", function () {})
+      //   .once("confirmation", function (transactionHash) {
+      //     setIsMetatransactionProcessing(false);
+      //     onConfirmation(transactionHash);
+      //   })
+      //   .on("error", function (e) {
+      //     setError(e);
+      //     console.log(e);
+      //     setIsMetatransactionProcessing(false);
+      //     onError();
+      //   });
     } catch (e) {
       setError(e);
+      console.log(e);
       onError();
     }
   };

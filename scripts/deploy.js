@@ -14,12 +14,16 @@ async function main() {
   // await hre.run('compile');
 
   // We get the contract to deploy
-  const Watch2Earn = await hre.ethers.getContractFactory("Watch2Earn");
-  const watch2Earn = await Watch2Earn.deploy();
+  const Watch2EarnFactory = await hre.ethers.getContractFactory(
+    "Watch2EarnFactory"
+  );
+  const watch2EarnFactory = await Watch2EarnFactory.deploy(
+    "0x9399BB24DBB5C4b782C70c2969F58716Ebbd6a3b"
+  );
 
-  await watch2Earn.deployed();
+  await watch2EarnFactory.deployed();
 
-  console.log("watch2Earn deployed to:", watch2Earn.address);
+  console.log("Watch2EarnFactory deployed to:", watch2EarnFactory.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere

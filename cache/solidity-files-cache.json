@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/Users/rj/2021Projects/blockchain/Watch2Earn/contracts/Watch2Earn.sol": {
-      "lastModificationDate": 1644062713569,
-      "contentHash": "38f307ce8b333a4280c60f6de0b1c8cd",
+      "lastModificationDate": 1644166044667,
+      "contentHash": "97e426916f4140277571d745094c7c8c",
       "sourceName": "contracts/Watch2Earn.sol",
       "solcConfig": {
         "version": "0.8.7",
@@ -33,13 +33,16 @@
         "@openzeppelin/contracts/access/Ownable.sol",
         "@openzeppelin/contracts/security/Pausable.sol",
         "@openzeppelin/contracts/token/ERC1155/extensions/ERC1155Burnable.sol",
-        "@openzeppelin/contracts/token/ERC1155/extensions/ERC1155Supply.sol"
+        "@openzeppelin/contracts/token/ERC1155/extensions/ERC1155Supply.sol",
+        "@opengsn/contracts/src/BaseRelayRecipient.sol",
+        "hardhat/console.sol"
       ],
       "versionPragmas": [
         "^0.8.2"
       ],
       "artifacts": [
-        "Watch2Earn"
+        "Watch2Earn",
+        "Watch2EarnFactory"
       ]
     },
     "/Users/rj/2021Projects/blockchain/Watch2Earn/node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol": {
@@ -230,6 +233,78 @@
       ],
       "artifacts": [
         "ERC1155Supply"
+      ]
+    },
+    "/Users/rj/2021Projects/blockchain/Watch2Earn/node_modules/@opengsn/contracts/src/BaseRelayRecipient.sol": {
+      "lastModificationDate": 1644070534075,
+      "contentHash": "d88b74178c935209123074eab10678cc",
+      "sourceName": "@opengsn/contracts/src/BaseRelayRecipient.sol",
+      "solcConfig": {
+        "version": "0.8.7",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IRelayRecipient.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.9"
+      ],
+      "artifacts": [
+        "BaseRelayRecipient"
+      ]
+    },
+    "/Users/rj/2021Projects/blockchain/Watch2Earn/node_modules/hardhat/console.sol": {
+      "lastModificationDate": 1643915429203,
+      "contentHash": "cc4777addd464ea56fa35b1c45df0591",
+      "sourceName": "hardhat/console.sol",
+      "solcConfig": {
+        "version": "0.8.7",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.22 <0.9.0"
+      ],
+      "artifacts": [
+        "console"
       ]
     },
     "/Users/rj/2021Projects/blockchain/Watch2Earn/node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155.sol": {
@@ -483,6 +558,41 @@
       ],
       "artifacts": [
         "IERC165"
+      ]
+    },
+    "/Users/rj/2021Projects/blockchain/Watch2Earn/node_modules/@opengsn/contracts/src/interfaces/IRelayRecipient.sol": {
+      "lastModificationDate": 1644070534076,
+      "contentHash": "6ed61fbbd3eab84648d82c99d1541fdf",
+      "sourceName": "@opengsn/contracts/src/interfaces/IRelayRecipient.sol",
+      "solcConfig": {
+        "version": "0.8.7",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0"
+      ],
+      "artifacts": [
+        "IRelayRecipient"
       ]
     }
   }

@@ -4,6 +4,7 @@
 	"version": "0.1.0",
 	"dependencies": {
 		"@biconomy/mexa": "^2.0.26",
+		"@opengsn/contracts": "^2.2.5",
 		"@openzeppelin/contracts": "^4.4.2",
 		"@walletconnect/web3-provider": "^1.6.6",
 		"magic-sdk": "^8.0.1",
@@ -53,7 +54,6 @@
 		"watch:events": "moralis-admin-cli add-contract",
 		"deploy:page": "cross-env-shell \"yarn build && touch out/.nojekyll && gh-pages -d out -t true\"",
 		"deploy:contract": "npx hardhat run scripts/deploy.js"
-		
 	},
 	"browserslist": {
 		"production": [
