@@ -1,13 +1,16 @@
 import React from "react";
+import { useRouter } from "next/router";
+
 import Account from "./Account/Account";
 import Logo from "./Logo";
 
 const Navbar = () => {
+  const router = useRouter();
   return (
     <>
       <nav className="bg-white border-gray-200 px-2 sm:px-4  dark:bg-black">
         <div className="container flex flex-wrap justify-between items-center mx-auto">
-          <a href="#" className="flex">
+          <a href="#" className="flex" onClick={()=> router.push('/')}>
             <Logo width={134} height={36} />
           </a>
           <button
