@@ -67,7 +67,7 @@ function Index() {
       <div className="h-3/4 mx-auto pt-16 ">
         <Slider {...settings} >
           {images.map((img, idx) => (
-            <div className={`${idx === imageIndex ? "slide activeSlide" : "slide"}  h-[350px] bg-contain rounded-3xl bg-[url('/Nike.png')]`} >
+            <div key={idx} className={`${idx === imageIndex ? "slide activeSlide" : "slide"}  h-[350px] bg-contain rounded-3xl bg-[url('/Nike.png')]`} >
               <div className="text-white text-3xl ml-8  mt-20" src='' alt='hey there' >
                 <p className="">Nike Air</p>
                 <p className="">Jordan</p>
@@ -95,12 +95,12 @@ function Index() {
           </button>
         </div>
         <div className="flex flex-wrap">
-          <Avatar key='1' />
-          <Avatar  key='2'/>
-          <Avatar key='3' />
-          <Avatar key='4'/>
-          <Avatar key='5'/>
-          <Avatar key='6'/>
+          <Avatar  />
+          <Avatar  />
+          <Avatar  />
+          <Avatar />
+          <Avatar />
+          <Avatar />
         </div>
       </div>
 
